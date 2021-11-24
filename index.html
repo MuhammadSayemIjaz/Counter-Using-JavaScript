@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .btn{
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            outline: none;
+            border: 2px solid #000;
+            border-radius: 5px;            
+            cursor: pointer;
+            font-size: 20px;
+            margin: 100px 10px;
+        }
+        .btn:hover{
+            border: 2px solid blue;
+        }
+        #Result{
+            color: green;
+            font-size: 80px;
+            margin: 20px;
+            
+        }
+        h1{
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+    <div class="mainDiv">
+        <div>
+            <h1>Counter</h1>
+        </div>
+        <div>
+            <Span id="Result">0</Span>
+        </div>
+        <div class="btns">
+            <button type="submit" class="btn decrease" id="decreaseBtn" onclick="Decrease()">Decrease</button>
+            <button type="reset" class="btn reset" id="resetBtn" onclick="Reset()">Reset</button>
+            <button type="submit" class="btn Increase"onclick="Increase()">Increase</button>
+        </div>
+    </div>
+</center>
+<script>
+    
+    const Result =  document.getElementById("Result");
+    const DecreaseBtn = document.getElementById("decreaseBtn");
+    const ResetBtn = document.getElementById("resetBtn");
+    const IncreaseBtn = document.getElementById("increaseBtn");
+    
+
+    console.log(typeof(Result.innerText));
+    const Value = parseInt(Result.innerText);
+    let Value2 = Value;
+    console.log(typeof(Value), Value);
+    
+    
+    function  Increase() {        
+        let UpadatedValue= ( Value2 += 1 ); 
+         console.log(Value2);
+         Result.innerText = UpadatedValue;
+    }
+    function Decrease() {
+        let UpadatedValue= ( Value2 -= 1 ); 
+         console.log(Value2);
+         Result.innerText = UpadatedValue;
+    }    
+    function Reset() {
+        Value2 = 0;
+        Result.innerText = Value2.toString();
+    }
+
+</script>
+</body>
+</html>
